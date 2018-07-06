@@ -26,7 +26,7 @@ ng test mylib # passes
 
 npm install --save-dev css-loader
 
-...added alias to wallaby.js
+...added alias to wallaby.js (as per [App Aliases and Wallaby.js #30](https://github.com/wallabyjs/ngCliWebpackSample/issues/30))
 alias: {
 '@myworkspacename/mylib': path.join(
 wallaby.projectCacheDir,
@@ -35,6 +35,9 @@ wallaby.projectCacheDir,
 }
 
 ...Wallaby now runs but has errors in OUTPUT tab
+
+My post: [Cannot find module "./browser/algorithms.json"​​ #1749](https://github.com/wallabyjs/public/issues/1749)
+Other references: [Angular NX config? #1347](https://github.com/wallabyjs/public/issues/1347)
 
 # Myworkspacename
 
