@@ -1,15 +1,14 @@
-import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
-import { RouterModule } from '@angular/router';
+import { MylibModule } from '@myworkspacename/mylib';
 
 @NgModule({
-  imports: [
-  BrowserModule,
-  NxModule.forRoot(),
-  RouterModule.forRoot([], {initialNavigation: 'enabled'})],
   declarations: [AppComponent],
+  imports: [BrowserModule, MylibModule, NxModule.forRoot()],
+  providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

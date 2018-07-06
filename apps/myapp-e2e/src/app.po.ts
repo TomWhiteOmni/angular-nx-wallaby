@@ -5,7 +5,7 @@ export class AppPage {
     return browser.get('/');
   }
 
-  text() {
-    return browser.findElement(by.css('body')).getText();
+  getParagraphText() {
+    return element(by.css('myworkspacename-root h1')).getText();
   }
 }
