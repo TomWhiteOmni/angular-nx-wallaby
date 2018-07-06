@@ -2,9 +2,39 @@
 
 Forked from [https://github.com/chgc/angular-nx-wallaby](https://github.com/chgc/angular-nx-wallaby)
 
-Wallaby now isn't happy with the provided wallaby.js config after Nrwl Nx Release 6.1.0
+Wallaby now isn't happy with the provided wallaby.js config (from the repo above) after Nrwl Nx Release 6.1.0
 
 so I've created this new version.
+
+# Steps I used to create this:
+
+ng new myworkspacename --collection=@nrwl/schematics
+
+npm i electron wallaby-webpack angular2-template-loader --save-dev
+
+ng generate lib mylib
+
+cd libs/mylib/src/lib
+
+ng g c lib-test
+
+...then added <myworkspacename-lib-test></myworkspacename-lib-test> to app.component.html, and wired up the dependencies to app.module and app.component.spec
+
+ng test myapp # passes
+
+ng test mylib # passes
+
+npm install --save-dev css-loader
+
+...added alias to wallaby.js
+alias: {
+'@myworkspacename/mylib': path.join(
+wallaby.projectCacheDir,
+'libs/mylib/src/index.ts'
+)
+}
+
+...Wallaby now runs but has errors in OUTPUT tab
 
 # Myworkspacename
 
