@@ -1,13 +1,3 @@
-# Why I forked this
-
-Forked from [https://github.com/chgc/angular-nx-wallaby](https://github.com/chgc/angular-nx-wallaby)
-
-Wallaby wasn't happy with the provided wallaby.js config (from the repo above) after Nrwl Nx Release 6.1.0
-
-so I've created this new version.
-
-...Wallaby now runs! @ArtemGovorov updated the wallaby.js config for new pattern for e2e tests to exclude them correctly. Thanks Artem.
-
 # To Use Wallaby in your Nrwl Nx project...
 
 1. Run this command:
@@ -32,6 +22,16 @@ require('./apps/myapp/tsconfig.spec.json').compilerOptions,
         )
       }
 ```
+
+# Why I forked this
+
+Forked from [https://github.com/chgc/angular-nx-wallaby](https://github.com/chgc/angular-nx-wallaby)
+
+Wallaby wasn't happy with the provided wallaby.js config (from the repo above) after Nrwl Nx Release 6.1.0
+
+so I've created this new version.
+
+...Wallaby now runs! @ArtemGovorov updated the wallaby.js config for new pattern for e2e tests to exclude them correctly. Thanks Artem.
 
 # Steps I used to create this:
 
