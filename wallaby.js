@@ -71,15 +71,16 @@ module.exports = function(wallaby) {
         load: false
       },
       { pattern: 'libs/**/*.d.ts', ignore: true },
-      { pattern: 'libs/**/*spec.ts', ignore: true }
-      // { pattern: 'browser/*.json', load: false }
+      { pattern: 'libs/**/*spec.ts', ignore: true },
+      { pattern: 'apps/**/*-e2e/**', ignore: true },
+      { pattern: 'libs/**/*-e2e/**', ignore: true }
     ],
 
     tests: [
       { pattern: 'apps/**/*spec.ts', load: false },
       { pattern: 'libs/**/*spec.ts', load: false },
-      { pattern: 'apps/**/e2e/**', ignore: true },
-      { pattern: 'libs/**/e2e/**', ignore: true }
+      { pattern: 'apps/**/*-e2e/**', ignore: true },
+      { pattern: 'libs/**/*-e2e/**', ignore: true }
     ],
 
     testFramework: 'jasmine',
