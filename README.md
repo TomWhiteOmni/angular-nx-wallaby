@@ -2,9 +2,36 @@
 
 Forked from [https://github.com/chgc/angular-nx-wallaby](https://github.com/chgc/angular-nx-wallaby)
 
-Wallaby now isn't happy with the provided wallaby.js config (from the repo above) after Nrwl Nx Release 6.1.0
+Wallaby wasn't happy with the provided wallaby.js config (from the repo above) after Nrwl Nx Release 6.1.0
 
 so I've created this new version.
+
+...Wallaby now runs! @ArtemGovorov updated the wallaby.js config for new pattern for e2e tests to exclude them correctly. Thanks Artem.
+
+# To Use Wallaby in your Nrwl Nx project...
+
+1. Run this command:
+   npm i electron wallaby-webpack angular2-template-loader --save-dev
+
+2. Put the wallaby.js and wallabyTest.ts in this repo in your root workspace folder.
+
+3. Edit wallaby.js at line 6 & 7 to suit your folder names
+
+```javascript
+require('./apps/myapp/tsconfig.spec.json').compilerOptions,
+  require('./libs/mylib/tsconfig.spec.json').compilerOptions;
+```
+
+4. Edit wallaby.js at line 46 to suit your Alias(es) (see [App Aliases and Wallaby.js #30](https://github.com/wallabyjs/ngCliWebpackSample/issues/30))
+
+```javascript
+      alias: {
+        '@myworkspacename/mylib': path.join(
+          wallaby.projectCacheDir,
+          'libs/mylib/src/index.ts'
+        )
+      }
+```
 
 # Steps I used to create this:
 
@@ -33,8 +60,6 @@ wallaby.projectCacheDir,
 'libs/mylib/src/index.ts'
 )
 }
-
-...Wallaby now runs but has errors in OUTPUT tab
 
 My post: [Cannot find module "./browser/algorithms.json"​​ #1749](https://github.com/wallabyjs/public/issues/1749)
 Other references: [Angular NX config? #1347](https://github.com/wallabyjs/public/issues/1347)
